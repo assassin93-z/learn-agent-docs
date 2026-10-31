@@ -1,0 +1,4 @@
+allowBuilds:
+  esbuild: true
+ignoredOptionalDependencies:
+  - "@napi-rs/lzma-linux-x64-gnu"

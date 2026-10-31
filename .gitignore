@@ -1,0 +1,43 @@
+# Dependencies and generated site output.
+node_modules/
+.pnpm-store/
+docs/.vitepress/cache/
+docs/.vitepress/dist/
+docs/.vitepress/.temp/
+coverage/
+*.log
+*.tsbuildinfo
+
+# Keep a single package manager and lockfile.
+package-lock.json
+npm-shrinkwrap.json
+yarn.lock
+bun.lock
+bun.lockb
+
+# Credentials, private runtime state and local editor metadata.
+.env
+.env.*
+.npmrc
+*.pem
+*.key
+*.p12
+*.pfx
+*.local.json
+.runtime/
+playground/
+.tmp/
+tmp/
+.codex/
+.claude/
+.agents/
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Local browser acceptance artifacts are not course content.
+.browser-cache/
+test-results/
+playwright-report/
+screenshots/

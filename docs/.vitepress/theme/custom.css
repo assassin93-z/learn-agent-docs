@@ -1,0 +1,165 @@
+:root {
+  --vp-font-family-base: "Trebuchet MS", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --vp-font-family-mono: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+  --vp-c-bg: #f7f5ee;
+  --vp-c-bg-alt: #eeeee4;
+  --vp-c-bg-elv: #fffdf6;
+  --vp-c-bg-soft: #ecefe6;
+  --vp-c-brand-1: #236b50;
+  --vp-c-brand-2: #2b7c5d;
+  --vp-c-brand-3: #358b6b;
+  --vp-c-brand-soft: rgba(35, 107, 80, 0.11);
+  --vp-c-text-1: #263a31;
+  --vp-c-text-2: #526259;
+  --vp-c-text-3: #68776e;
+  --vp-c-divider: #d6ddd0;
+  --vp-sidebar-bg-color: #eeeee4;
+  --vp-code-block-bg: #eeeee4;
+  --vp-nav-logo-height: 28px;
+}
+
+body {
+  background-image: linear-gradient(rgba(35, 107, 80, 0.024) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(35, 107, 80, 0.024) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.VPNavBarTitle .title {
+  font-family: Georgia, "Songti SC", serif;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.VPNavBar.has-sidebar .content-body,
+.VPNavBar:not(.has-sidebar) {
+  background: rgba(247, 245, 238, 0.94);
+}
+
+.VPNavBar .VPNavBarTranslations,
+.VPNavScreen .VPNavScreenTranslations {
+  display: none;
+}
+
+.course-locale-links {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 8px;
+  margin-left: 18px;
+  font-size: 13px;
+  line-height: 24px;
+  white-space: nowrap;
+}
+
+.course-locale-links a {
+  color: var(--vp-c-brand-1);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.course-locale-links [aria-current="page"] {
+  font-weight: 700;
+}
+
+.course-locale-links .divider {
+  color: var(--vp-c-text-3);
+}
+
+.course-notices {
+  margin-top: 28px;
+  padding-top: 16px;
+  border-top: 1px solid var(--vp-c-divider);
+  font-size: 12px;
+  color: var(--vp-c-text-2);
+}
+
+.course-notices a {
+  color: var(--vp-c-brand-1);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.vp-doc h1 {
+  font-family: Georgia, "Songti SC", "STSong", serif;
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+  margin-bottom: 22px;
+}
+
+.vp-doc h2 {
+  font-family: Georgia, "Songti SC", "STSong", serif;
+  font-size: 26px;
+  line-height: 1.4;
+  padding-top: 22px;
+}
+
+.vp-doc p,
+.vp-doc li {
+  line-height: 1.85;
+}
+
+.vp-doc a {
+  text-underline-offset: 4px;
+}
+
+.vp-doc p[align="center"] {
+  margin: 20px 0 28px;
+  padding: 12px 16px;
+  border-top: 1px solid var(--vp-c-divider);
+  border-bottom: 1px solid var(--vp-c-divider);
+  font-size: 14px;
+}
+
+.vp-doc table {
+  font-size: 14px;
+}
+
+.VPDoc .container {
+  max-width: 1220px;
+}
+
+.VPDocFooter .pager-link {
+  border-radius: 4px;
+  background: rgba(255, 253, 246, 0.7);
+}
+
+.VPSidebarItem.level-0 > .item .text {
+  letter-spacing: 0.04em;
+}
+
+.VPDoc .content-container {
+  min-width: 0;
+}
+
+@media (max-width: 639px) {
+  .course-locale-links {
+    gap: 6px;
+    margin-left: 10px;
+    font-size: 12px;
+  }
+
+  .VPNavBarTitle .title {
+    font-size: 15px;
+    letter-spacing: 0;
+  }
+
+  .vp-doc h2 {
+    font-size: 23px;
+  }
+
+  .vp-doc table {
+    max-width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .VPDoc .content-container {
+    animation: page-enter 320ms ease-out both;
+  }
+
+  @keyframes page-enter {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "learn-agent-docs",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "A bilingual reading site for small TypeScript agent architecture lessons.",
+  "license": "UNLICENSED",
+  "packageManager": "pnpm@11.22.0",
+  "engines": {
+    "node": "^22.16.0 || ^24.0.0 || >=26.0.0"
+  },
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "pnpm check:notices && vitepress build docs",
+    "docs:preview": "vitepress preview docs",
+    "notices:generate": "node scripts/generate-notices.mjs",
+    "check:notices": "node scripts/generate-notices.mjs --check",
+    "test": "node --test tests/*.test.mjs",
+    "check:privacy": "node scripts/check-public-files.mjs",
+    "check:artifact": "node scripts/check-public-files.mjs --dist",
+    "check:site": "node scripts/check-site.mjs",
+    "check": "pnpm test && pnpm check:privacy && pnpm docs:build && pnpm check:site && pnpm check:artifact"
+  },
+  "devDependencies": {
+    "vitepress": "1.6.4",
+    "vue": "3.5.13"
+  }
+}
