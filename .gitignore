@@ -41,3 +41,7 @@ Thumbs.db
 test-results/
 playwright-report/
 screenshots/
+
+# Impeccable critique snapshots are local review evidence, not site source.
+.impeccable/critique/
+.impeccable/review/

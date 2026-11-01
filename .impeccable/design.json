@@ -1,0 +1,330 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-01T13:18:50+08:00",
+  "title": "Design System: Learn Agent",
+  "extensions": {
+    "seedReference": "seed:0ab6907bb51f4ec3",
+    "colorMeta": {
+      "repo-shell": {
+        "role": "primary",
+        "displayName": "Repository Shell",
+        "canonical": "#08111a",
+        "purpose": "顶部导航、侧栏、移动课程导航和最深框架。"
+      },
+      "repo-shell-raised": {
+        "role": "primary",
+        "displayName": "Raised Repository Surface",
+        "canonical": "#101c28",
+        "purpose": "首页提交分组、章节头内容面和完成状态。"
+      },
+      "repo-panel": {
+        "role": "primary",
+        "displayName": "Repository Panel",
+        "canonical": "#162536",
+        "purpose": "深色控件、代码复制按钮和局部活动面。"
+      },
+      "repo-paper": {
+        "role": "neutral",
+        "displayName": "Document Paper",
+        "canonical": "#f3f6f6",
+        "purpose": "全局阅读底面。"
+      },
+      "repo-sheet": {
+        "role": "neutral",
+        "displayName": "Document Sheet",
+        "canonical": "#ffffff",
+        "purpose": "首页主张区、分页和强分离内容面。"
+      },
+      "repo-ink": {
+        "role": "neutral",
+        "displayName": "Document Ink",
+        "canonical": "#17242f",
+        "purpose": "正文、标题和主要信息。"
+      },
+      "repo-muted": {
+        "role": "neutral",
+        "displayName": "Muted Ink",
+        "canonical": "#5d6d79",
+        "purpose": "说明、元信息和低优先级导航。"
+      },
+      "repo-frame-muted": {
+        "role": "neutral",
+        "displayName": "Repository Frame Muted",
+        "canonical": "#aebdc7",
+        "purpose": "深色 repository 框架上的次要导航与搜索说明。"
+      },
+      "repo-frame-disabled": {
+        "role": "neutral",
+        "displayName": "Repository Frame Disabled",
+        "canonical": "#718795",
+        "purpose": "深色框架上的不可用方向与禁用状态。"
+      },
+      "repo-line": {
+        "role": "neutral",
+        "displayName": "Document Rule",
+        "canonical": "#c8d3d9",
+        "purpose": "正文表格、分页和阅读区分隔。"
+      },
+      "repo-line-dark": {
+        "role": "neutral",
+        "displayName": "Repository Rule",
+        "canonical": "#2a3d4d",
+        "purpose": "深色框架内的结构线。"
+      },
+      "repo-cyan": {
+        "role": "secondary",
+        "displayName": "Branch Cyan",
+        "canonical": "#49c6ff",
+        "purpose": "链接、分支路径、语言标签和导航提示。"
+      },
+      "repo-cyan-ink": {
+        "role": "secondary",
+        "displayName": "Branch Cyan Ink",
+        "canonical": "#05698f",
+        "purpose": "浅色阅读面上的链接与路径文字。"
+      },
+      "repo-green": {
+        "role": "secondary",
+        "displayName": "Commit Green",
+        "canonical": "#32d27d",
+        "purpose": "已验证、已完成、可继续和主行动。"
+      },
+      "repo-amber": {
+        "role": "secondary",
+        "displayName": "Checkout Amber",
+        "canonical": "#f4b942",
+        "purpose": "当前模块、当前检出和活动状态。"
+      },
+      "repo-red": {
+        "role": "secondary",
+        "displayName": "Diff Red",
+        "canonical": "#ff687b",
+        "purpose": "错误、危险或移除语义。"
+      },
+      "repo-code": {
+        "role": "neutral",
+        "displayName": "Code Surface",
+        "canonical": "#0d1722",
+        "purpose": "代码块与技术证据面。"
+      },
+      "repo-code-ink": {
+        "role": "neutral",
+        "displayName": "Code Ink",
+        "canonical": "#dcefff",
+        "purpose": "深色代码面上的主要文字。"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Repository Statement",
+        "purpose": "首页课程主张。"
+      },
+      "lesson-title": {
+        "displayName": "Checkout Title",
+        "purpose": "章节 checkout 标题和普通页面主标题。"
+      },
+      "headline": {
+        "displayName": "Document Section",
+        "purpose": "正文 H2，与 commit node 和结构线共同形成阅读节奏。"
+      },
+      "title": {
+        "displayName": "Repository Group",
+        "purpose": "提交分组、完成态、分页和三级标题。"
+      },
+      "body": {
+        "displayName": "Course Body",
+        "purpose": "中英文技术长文，限制为约 68ch。"
+      },
+      "label": {
+        "displayName": "Action Label",
+        "purpose": "导航、按钮和交互状态。"
+      },
+      "mono": {
+        "displayName": "Technical Evidence",
+        "purpose": "代码、路径、命令和技术标识。"
+      },
+      "mono-label": {
+        "displayName": "Repository State",
+        "purpose": "分支、checkout、语言和提交状态。"
+      },
+      "micro": {
+        "displayName": "Commit Metadata",
+        "purpose": "模块编号、轨迹标签和低优先级测量信息。"
+      },
+      "wordmark": {
+        "displayName": "LEARN / AGENT",
+        "purpose": "顶部 repository 标记。"
+      }
+    },
+    "shadows": [
+      {
+        "name": "repository-frame",
+        "value": "0 24px 60px rgb(8 17 26 / 16%)",
+        "purpose": "只分离首页 repository 工作区和浅色阅读面。"
+      },
+      {
+        "name": "checkout-frame",
+        "value": "0 20px 46px rgb(8 17 26 / 14%)",
+        "purpose": "只分离章节 checkout header 和正文。"
+      }
+    ],
+    "motion": [
+      {
+        "name": "commit-reveal",
+        "value": "480ms cubic-bezier(0.22, 1, 0.36, 1): translateY(8px) to 0, staggered",
+        "purpose": "首页提交组和历史条目按阅读顺序进入。"
+      },
+      {
+        "name": "state-transition",
+        "value": "160ms ease-out: color, background-color, border-color, transform",
+        "purpose": "导航、提交条目、按钮和分页的即时反馈。"
+      },
+      {
+        "name": "reduced-motion",
+        "value": "static hierarchy when prefers-reduced-motion: reduce",
+        "purpose": "关闭位移动画但保留颜色与结构状态。"
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "narrow-mobile",
+        "value": "360px"
+      },
+      {
+        "name": "mobile-navigation",
+        "value": "768px"
+      },
+      {
+        "name": "compact-repository",
+        "value": "960px"
+      },
+      {
+        "name": "wide-reading-frame",
+        "value": "1280px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Commit Action",
+      "kind": "button",
+      "refersTo": "primary-action",
+      "description": "Commit Green 主行动，用于进入第一个课程提交。",
+      "html": "<a class=\"ds-commit-action\" href=\"#\">从 01 模块开始</a>",
+      "css": ".ds-commit-action { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; padding: 0 20px; border: 1px solid #32d27d; border-radius: 10px; background: #32d27d; color: #08111a; font-family: \"IBM Plex Sans\", sans-serif; font-size: 14px; font-weight: 650; text-decoration: none; transition: transform 160ms ease-out, background-color 160ms ease-out; } .ds-commit-action:hover { transform: translateY(-1px); background: #5ee096; } .ds-commit-action:focus-visible { outline: 3px solid #49c6ff; outline-offset: 3px; }"
+    },
+    {
+      "name": "Repository Landing",
+      "kind": "custom",
+      "refersTo": "repository-landing",
+      "description": "状态栏、浅色课程主张和深色提交分组共同组成的首页工作区。",
+      "html": "<section class=\"ds-repository\"><header>learn-agent / course-main <span>11 项能力已规划</span></header><div><main><h1>逐项提交一个可解释的 Agent。</h1></main><aside>能力提交分组</aside></div></section>",
+      "css": ".ds-repository { overflow: hidden; border: 1px solid #2a3d4d; border-radius: 14px; box-shadow: 0 24px 60px rgb(8 17 26 / 16%); } .ds-repository > header { display: flex; justify-content: space-between; padding: 12px 16px; background: #08111a; color: #dcefff; font: 600 12px/1.4 \"IBM Plex Mono\", monospace; } .ds-repository > div { display: grid; grid-template-columns: 1.15fr .85fr; } .ds-repository main { padding: 48px; background: #fff; color: #17242f; } .ds-repository aside { padding: 32px; background: #101c28; color: #fff; }"
+    },
+    {
+      "name": "Commit History",
+      "kind": "nav",
+      "refersTo": "commit-history",
+      "description": "单列课程入口，由连续 branch line 串联十一项真实模块。",
+      "html": "<nav class=\"ds-history\"><a href=\"#\"><i></i><code>01</code><strong>最小 Agent 循环</strong></a><a href=\"#\"><i></i><code>02</code><strong>工具注册表</strong></a></nav>",
+      "css": ".ds-history { position: relative; display: grid; } .ds-history::before { position: absolute; top: 20px; bottom: 20px; left: 9px; width: 1px; background: #c8d3d9; content: \"\"; } .ds-history a { display: grid; min-height: 54px; grid-template-columns: 20px 44px minmax(0, 1fr); align-items: center; border-bottom: 1px solid #c8d3d9; color: #17242f; text-decoration: none; } .ds-history i { z-index: 1; width: 8px; height: 8px; border: 2px solid #49c6ff; border-radius: 50%; background: #f3f6f6; } .ds-history code { color: #1488b4; font: 600 12px \"IBM Plex Mono\", monospace; } .ds-history a:hover { background: rgb(73 198 255 / 7%); }"
+    },
+    {
+      "name": "Sidebar Commit Graph",
+      "kind": "nav",
+      "refersTo": "commit-history",
+      "description": "桌面侧栏中的连续课程轨迹，当前 checkout 使用绿色节点和活动面。",
+      "html": "<nav class=\"ds-sidebar-graph\"><a class=\"is-current\" href=\"#\"><i></i>01 · 最小 Agent 循环</a><a href=\"#\"><i></i>02 · 工具注册表</a></nav>",
+      "css": ".ds-sidebar-graph { position: relative; display: grid; gap: 2px; padding-left: 18px; } .ds-sidebar-graph::before { position: absolute; top: 12px; bottom: 12px; left: 7px; width: 1px; background: #2a3d4d; content: \"\"; } .ds-sidebar-graph a { position: relative; min-height: 34px; padding: 8px 10px; border-radius: 6px; color: #8ea1af; text-decoration: none; } .ds-sidebar-graph i { position: absolute; left: -15px; top: 13px; width: 7px; height: 7px; border: 1px solid #527083; border-radius: 50%; background: #08111a; } .ds-sidebar-graph .is-current { background: rgb(50 210 125 / 10%); color: #32d27d; } .ds-sidebar-graph .is-current i { border-color: #32d27d; background: #32d27d; box-shadow: 0 0 0 4px rgb(50 210 125 / 10%); }"
+    },
+    {
+      "name": "Lesson Checkout Header",
+      "kind": "custom",
+      "refersTo": "checkout-header",
+      "description": "模块号、分支、当前 checkout、章节标题和十一节点轨迹组成的章节位置说明。",
+      "html": "<header class=\"ds-checkout\"><div class=\"ds-checkout__number\"><span>commit</span><strong>04</strong><code>/ 11</code></div><div class=\"ds-checkout__body\"><code>course-main</code><p>当前检出</p><h1>上下文与会话</h1><div class=\"ds-checkout__rail\"></div></div></header>",
+      "css": ".ds-checkout { display: grid; grid-template-columns: 150px minmax(0, 1fr); overflow: hidden; border: 1px solid #2a3d4d; border-radius: 14px; background: #08111a; color: #fff; box-shadow: 0 20px 46px rgb(8 17 26 / 14%); } .ds-checkout__number { display: flex; min-height: 220px; padding: 24px 20px; flex-direction: column; justify-content: space-between; border-right: 1px solid #2a3d4d; } .ds-checkout__number strong { font: 680 78px/.9 \"IBM Plex Sans\", sans-serif; } .ds-checkout__number code { color: #49c6ff; } .ds-checkout__body { padding: 28px 32px; background: #101c28; } .ds-checkout h1 { margin: 18px 0 0; font: 680 52px/1 \"IBM Plex Sans\", sans-serif; } .ds-checkout__rail { margin-top: 40px; border-top: 1px solid #2a3d4d; }"
+    },
+    {
+      "name": "Code Evidence",
+      "kind": "custom",
+      "refersTo": "code-block",
+      "description": "深色技术证据块，使用 2px 三段状态轨、紧凑语言标签和 32px 复制控件。",
+      "html": "<div class=\"ds-code\"><span>bash</span><button aria-label=\"复制代码\"></button><pre><code>pnpm check\npnpm docs:build</code></pre></div>",
+      "css": ".ds-code { position: relative; overflow-x: auto; border: 1px solid #2a3d4d; border-radius: 10px; background: linear-gradient(90deg, #32d27d 0 34%, #49c6ff 34% 66%, #f4b942 66% 82%, transparent 82%) top left / 100% 2px no-repeat, #0d1722; color: #dcefff; } .ds-code > span { position: absolute; top: 10px; right: 48px; color: #49c6ff; font: 600 11px \"IBM Plex Mono\", monospace; } .ds-code button { position: absolute; top: 8px; right: 8px; width: 32px; height: 32px; border: 1px solid #2a3d4d; border-radius: 6px; background: #162536; } .ds-code pre { margin: 0; padding: 22px 24px 18px; } .ds-code code { font: 400 13px/1.62 \"IBM Plex Mono\", monospace; }"
+    },
+    {
+      "name": "Commit Complete",
+      "kind": "card",
+      "refersTo": "commit-complete",
+      "description": "课程页尾的 committed 状态、真实模块计数和完整提交图入口。",
+      "html": "<section class=\"ds-complete\"><i>✓</i><div><strong>模块 04 已提交</strong><span>4 / 11 项提交已验证</span></div><a href=\"#\">查看完整提交图</a></section>",
+      "css": ".ds-complete { display: grid; grid-template-columns: 44px minmax(0, 1fr) auto; align-items: center; gap: 16px; padding: 22px; border: 1px solid #2a3d4d; border-radius: 14px; background: #101c28; color: #fff; } .ds-complete i { display: grid; width: 34px; height: 34px; place-items: center; border: 2px solid #32d27d; border-radius: 50%; color: #32d27d; font-style: normal; } .ds-complete div { display: flex; flex-direction: column; } .ds-complete strong { font-size: 20px; } .ds-complete span { color: #8ea1af; font: 600 11px \"IBM Plex Mono\", monospace; } .ds-complete a { color: #49c6ff; font-weight: 650; }"
+    },
+    {
+      "name": "Mobile Repository Navigation",
+      "kind": "nav",
+      "refersTo": "primary-action",
+      "description": "课程页固定的上一课、当前学习分支和下一课导航。",
+      "html": "<nav class=\"ds-mobile-nav\"><a href=\"#\">‹ 上一课</a><a class=\"is-current\" href=\"#\"><span>4 / 11</span><strong>学习分支</strong></a><a href=\"#\">下一课 ›</a></nav>",
+      "css": ".ds-mobile-nav { display: grid; min-height: 68px; grid-template-columns: 1fr 1.15fr 1fr; border-top: 1px solid #2a3d4d; background: #08111a; } .ds-mobile-nav a { display: flex; min-height: 68px; align-items: center; justify-content: center; color: #dcefff; font-size: 13px; font-weight: 650; text-decoration: none; } .ds-mobile-nav .is-current { flex-direction: column; background: #32d27d; color: #08111a; } .ds-mobile-nav span { font: 600 11px \"IBM Plex Mono\", monospace; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Version-Control Workbench / 可追溯提交工作台",
+    "overview": "Learn Agent 的共享主题像一个为阅读而设计的版本控制工作台。十一项能力是一条可追溯的提交历史：读者能看见当前 checkout、已验证提交、后续分支和课程完成状态，同时继续在安静的浅色阅读面上理解技术内容。\n\n深色 repository 框架负责身份、导航与状态，浅色 document surface 负责正文、表格和长时间阅读。系统借用 commit graph、diff 状态、checkout 与 committed 的出版语言，但不把文档伪装成终端或 IDE。",
+    "keyCharacteristics": [
+      "深色顶部与侧栏构成稳定的 repository chrome，正文始终落在浅色阅读面。",
+      "首页第一屏同时呈现 repository 状态栏、课程主张和能力提交分组。",
+      "十一模块使用连续 commit graph 表达顺序、当前位置和已验证状态。",
+      "IBM Plex Sans 承担阅读与标题，IBM Plex Mono 只用于代码、路径、状态和测量标签。",
+      "6/10/14px 圆角、1px 结构线、克制阴影和明确状态色建立层级。"
+    ],
+    "rules": [
+      {
+        "name": "The State Color Rule",
+        "body": "绿色表示已验证或正向完成，青色表示路径与可导航信息，琥珀色只表示当前 checkout，红色只表示错误或移除。",
+        "section": "colors"
+      },
+      {
+        "name": "The Calm Document Rule",
+        "body": "深色框架可以高密度，正文阅读面必须保持浅色、低噪声和真实对比。",
+        "section": "colors"
+      },
+      {
+        "name": "The Mono Evidence Rule",
+        "body": "等宽字体只用于代码、路径、状态和编号，不把标题或连续正文改成等宽字体。",
+        "section": "typography"
+      },
+      {
+        "name": "The Traceable Number Rule",
+        "body": "数字只表达真实的十一模块顺序、当前位置或已验证数量，不使用虚构 hash、指标或运行数据。",
+        "section": "typography"
+      },
+      {
+        "name": "The Frame Owns Depth Rule",
+        "body": "阴影只属于大框架，不属于列表项、提示块和每个按钮。",
+        "section": "elevation"
+      },
+      {
+        "name": "The Workbench Radius Rule",
+        "body": "圆角用于大型框架和可操作控件，不把所有列表行包成柔软卡片，也不使用胶囊作为默认形状。",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "Do 让 repository frame 明确包围浅色阅读区，而不是把整站做成黑底终端。",
+      "Do 用 commit graph、checkout 和 committed 状态持续回答我在哪里、完成了什么、下一步去哪。",
+      "Do 只使用真实课程顺序、模块数量和验证状态。",
+      "Do 在 1440px、800px、390px 和 320px 检查中英文标题、提交轨迹、代码宽度和固定导航。",
+      "Do 保持课程 Markdown 正文、课程事实、中英文对应关系和 Agent 工程代码不变。"
+    ],
+    "donts": [
+      "Don't 使用霓虹紫、发光边框、玻璃拟态或整页扫描线替代真实信息层级。",
+      "Don't 把标准导航改造成需要学习的 terminal 命令界面。",
+      "Don't 用虚构 commit hash、在线状态、性能指标或运行数据增强科技感。",
+      "Don't 把每个提交、提示和列表项都包成同尺寸卡片。",
+      "Don't 修改课程正文或 learn-agent Agent 代码来适配主题。"
+    ]
+  }
+}

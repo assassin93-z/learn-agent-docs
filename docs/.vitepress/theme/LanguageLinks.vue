@@ -7,12 +7,17 @@ const { page: pageData } = useData();
 const relativePath = computed(() => pageData.value.relativePath ?? "");
 const page = computed(() => COURSE_PAGES.find((item) => item.file === relativePath.value));
 const english = computed(() => page.value?.locale === "en" || relativePath.value.startsWith("en/"));
-const chineseHref = computed(() => withBase(english.value ? page.value?.translation ?? "/" : page.value?.route ?? "/"));
-const englishHref = computed(() => withBase(english.value ? page.value?.route ?? "/en/" : page.value?.translation ?? "/en/"));
+const label = computed(() => english.value ? "Language" : "语言");
+const chineseHref = computed(() => page.value
+  ? withBase(english.value ? page.value.translation : page.value.route)
+  : null);
+const englishHref = computed(() => page.value
+  ? withBase(english.value ? page.value.route : page.value.translation)
+  : null);
 </script>
 
 <template>
-  <nav class="course-locale-links" aria-label="语言 / Language">
+  <nav v-if="page" class="course-locale-links" :aria-label="label">
     <a v-if="english" :href="chineseHref" lang="zh-Hans">中文</a>
     <span v-else lang="zh-Hans" aria-current="page">中文</span>
     <span class="divider" aria-hidden="true">·</span>

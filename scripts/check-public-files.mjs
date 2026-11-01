@@ -4,7 +4,7 @@ import { basename, join, relative, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 import { COURSE_PAGES } from "./course-pages.mjs";
 
-const markdownFiles = new Set(["README.md", "README_EN.md", ...COURSE_PAGES.map(({ file }) => `docs/${file}`)]);
+const markdownFiles = new Set(["README.md", "README_EN.md", "PRODUCT.md", "DESIGN.md", ...COURSE_PAGES.map(({ file }) => `docs/${file}`)]);
 const binaryExtensions = /\.(?:woff2?|ttf|png|jpe?g|gif|webp|ico)$/i;
 const alternateLocks = new Set(["package-lock.json", "npm-shrinkwrap.json", "yarn.lock", "bun.lock", "bun.lockb"]);
 
@@ -20,10 +20,11 @@ const patterns = [
 
 function publicSourcePath(file) {
   if (markdownFiles.has(file)) return true;
-  if ([".gitignore", "package.json", "pnpm-lock.yaml", "pnpm-workspace.yaml", "docs/public/THIRD_PARTY_NOTICES.txt"].includes(file)) return true;
+  if ([".gitignore", ".impeccable/config.json", ".impeccable/design.json", "package.json", "pnpm-lock.yaml", "pnpm-workspace.yaml", "docs/public/THIRD_PARTY_NOTICES.txt"].includes(file)) return true;
   if (/^\.github\/workflows\/[^/]+\.ya?ml$/.test(file)) return true;
   if (/^scripts\/[^/]+\.mjs$/.test(file) || /^tests\/[^/]+\.test\.mjs$/.test(file)) return true;
   if (/^docs\/\.vitepress\/(?:config\.m(?:t|j)s|theme\/(?:[^/]+\.(?:js|mjs|vue|css)))$/.test(file)) return true;
+  if (/^docs\/public\/fonts\/(?:barlow-condensed\/(?:BarlowCondensed-(?:SemiBold|Bold)\.ttf|OFL\.txt)|ibm-plex-sans\/(?:IBMPlexSans-Variable\.ttf|OFL\.txt)|ibm-plex-mono\/(?:IBMPlexMono-(?:Regular|SemiBold)\.ttf|OFL\.txt))$/.test(file)) return true;
   return /^docs\/public\/[^/]+\.(?:svg|png|webp|ico)$/.test(file);
 }
 
@@ -31,7 +32,8 @@ function publicArtifactPath(file) {
   const pages = new Set(COURSE_PAGES.map(({ file }) => file.replace(/\.md$/, ".html")));
   return pages.has(file) || ["404.html", "sitemap.xml", "robots.txt", "hashmap.json", "vp-icons.css", "THIRD_PARTY_NOTICES.txt", ".nojekyll"].includes(file)
     || /^assets\/chunks\/@localSearchIndex(?:en|root)\.[A-Za-z0-9_-]+\.js$/.test(file)
-    || /^assets\/[A-Za-z0-9_./-]+\.(?:js|css|json|svg|woff2?|ttf|png|jpe?g|gif|webp|ico)$/.test(file);
+    || /^assets\/[A-Za-z0-9_./-]+\.(?:js|css|json|svg|woff2?|ttf|png|jpe?g|gif|webp|ico)$/.test(file)
+    || /^fonts\/(?:barlow-condensed\/(?:BarlowCondensed-(?:SemiBold|Bold)\.ttf|OFL\.txt)|ibm-plex-sans\/(?:IBMPlexSans-Variable\.ttf|OFL\.txt)|ibm-plex-mono\/(?:IBMPlexMono-(?:Regular|SemiBold)\.ttf|OFL\.txt))$/.test(file);
 }
 
 function normalizeEscapes(content) {

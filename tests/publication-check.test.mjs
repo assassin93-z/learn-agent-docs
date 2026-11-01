@@ -16,12 +16,24 @@ test("validates committed third-party notices before every production build", ()
 
 test("accepts reviewed documentation and public dependency resolution", () => {
   assert.deepEqual(inspectContent("docs/index.md", "# 学习\n\n[课程](https://namiai.tech/agent/)"), []);
+  assert.deepEqual(inspectContent("PRODUCT.md", "# Product\n\nPublic course context."), []);
+  assert.deepEqual(inspectContent("DESIGN.md", "# Design System\n\nPublic visual guidance."), []);
+  assert.deepEqual(inspectContent(".impeccable/config.json", JSON.stringify({ buildPath: "code" })), []);
+  assert.deepEqual(inspectContent(".impeccable/design.json", JSON.stringify({ schemaVersion: 2 })), []);
+  assert.deepEqual(inspectContent("docs/public/fonts/barlow-condensed/BarlowCondensed-SemiBold.ttf", ""), []);
+  assert.deepEqual(inspectContent("docs/public/fonts/barlow-condensed/BarlowCondensed-Bold.ttf", ""), []);
+  assert.deepEqual(inspectContent("docs/public/fonts/barlow-condensed/OFL.txt", "SIL Open Font License"), []);
+  assert.deepEqual(inspectContent("docs/public/fonts/ibm-plex-sans/IBMPlexSans-Variable.ttf", ""), []);
+  assert.deepEqual(inspectContent("docs/public/fonts/ibm-plex-sans/OFL.txt", "SIL Open Font License"), []);
+  assert.deepEqual(inspectContent("docs/public/fonts/ibm-plex-mono/IBMPlexMono-Regular.ttf", ""), []);
+  assert.deepEqual(inspectContent("docs/public/fonts/ibm-plex-mono/IBMPlexMono-SemiBold.ttf", ""), []);
+  assert.deepEqual(inspectContent("docs/public/fonts/ibm-plex-mono/OFL.txt", "SIL Open Font License"), []);
   assert.deepEqual(inspectContent("pnpm-lock.yaml", "resolution: https://registry.npmjs.org/vitepress/-/vitepress-1.6.4.tgz"), []);
   assert.deepEqual(inspectContent("package.json", JSON.stringify({ private: true, packageManager: "pnpm@11.22.0", devDependencies: { vitepress: "1.6.4", vue: "3.5.13" } })), []);
 });
 
 test("limits Markdown and source file publication to the documentation whitelist", () => {
-  for (const file of ["README_CN.md", "docs/extra.md", "src/agent.ts", "lessons/demo.ts", ".env", ".npmrc", ".git/config", ".runtime/session.json"]) {
+  for (const file of ["README_CN.md", "docs/extra.md", "src/agent.ts", "lessons/demo.ts", ".env", ".npmrc", ".git/config", ".runtime/session.json", ".impeccable/private.json"]) {
     assert.ok(inspectContent(file, "fixture").includes("file is outside the publication whitelist"), file);
   }
   assert.ok(inspectContent("README_CN.md", "fixture").includes("redundant Chinese documentation"));
@@ -80,6 +92,16 @@ test("scans generated JavaScript search artifacts, not only HTML", () => {
   assert.deepEqual(inspectContent("vp-icons.css", ".icon { display: block; }", { artifact: true }), []);
   assert.deepEqual(inspectContent("docs/public/THIRD_PARTY_NOTICES.txt", "Reviewed third-party license text."), []);
   assert.deepEqual(inspectContent("THIRD_PARTY_NOTICES.txt", "Reviewed third-party license text.", { artifact: true }), []);
+  assert.deepEqual(inspectContent("fonts/barlow-condensed/BarlowCondensed-SemiBold.ttf", "", { artifact: true }), []);
+  assert.deepEqual(inspectContent("fonts/barlow-condensed/BarlowCondensed-Bold.ttf", "", { artifact: true }), []);
+  assert.deepEqual(inspectContent("fonts/barlow-condensed/OFL.txt", "SIL Open Font License", { artifact: true }), []);
+  assert.deepEqual(inspectContent("fonts/ibm-plex-sans/IBMPlexSans-Variable.ttf", "", { artifact: true }), []);
+  assert.deepEqual(inspectContent("fonts/ibm-plex-sans/OFL.txt", "SIL Open Font License", { artifact: true }), []);
+  assert.deepEqual(inspectContent("fonts/ibm-plex-mono/IBMPlexMono-Regular.ttf", "", { artifact: true }), []);
+  assert.deepEqual(inspectContent("fonts/ibm-plex-mono/IBMPlexMono-SemiBold.ttf", "", { artifact: true }), []);
+  assert.deepEqual(inspectContent("fonts/ibm-plex-mono/OFL.txt", "SIL Open Font License", { artifact: true }), []);
+  assert.ok(inspectContent("fonts/barlow-condensed/unreviewed.ttf", "", { artifact: true }).includes("file is outside the publication whitelist"));
+  assert.ok(inspectContent("fonts/ibm-plex-sans/unreviewed.ttf", "", { artifact: true }).includes("file is outside the publication whitelist"));
   assert.ok(inspectContent("assets/chunks/@unreviewed.hash.js", "export default {};", { artifact: true }).includes("file is outside the publication whitelist"));
 });
 
